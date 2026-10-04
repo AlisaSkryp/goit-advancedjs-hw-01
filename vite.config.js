@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
       ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
       : '/',
     define: {
-      global: 'window',
+      [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
     build: {
